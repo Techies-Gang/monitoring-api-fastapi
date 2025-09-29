@@ -7,6 +7,8 @@ from fastapi import Depends, FastAPI, HTTPException, status, Response, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
+#Login Page API
+
 # CONFIG
 SECRET_KEY = "mysecretkey"   # use a stronger key in production
 ALGORITHM = "HS256"
@@ -162,3 +164,4 @@ async def logout(request: Request, response: Response):
     response.delete_cookie("access_token")
 
     return {"message": "Successfully logged out"}
+
